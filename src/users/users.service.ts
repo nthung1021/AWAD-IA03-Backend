@@ -19,8 +19,21 @@ export class UsersService {
 
       return user
     } catch (error: any) {
-      if (error?.code === 'P2002' && error?.meta?.target?.includes('email')){
-          throw new ConflictException('Email is already registered.')
+      if (error?.code === 'P2002') {
+        const target: string[] = Array.isArray(error?.meta?.target)
+          ? error.meta.target
+          : [String(error?.meta?.target ?? '')];
+
+        const field = target.find((t) => t === 'email' || t === 'name') ?? 'unknown';
+        const message =
+          field === 'email'
+            ? 'Email already exists.'
+            : field === 'name'
+            ? 'Name already exists.'
+            : 'The value is already taken.';
+
+        // Include `field` in the response body for the frontend
+        throw new ConflictException({ message, field, code: 'UNIQUE_CONSTRAINT' });
       }
       throw new InternalServerErrorException('Failed to create user.')
     }
