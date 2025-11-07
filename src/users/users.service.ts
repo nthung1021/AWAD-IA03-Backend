@@ -28,11 +28,11 @@ export class UsersService {
 
   // Get user by name
   async findByName(name: string) {
-    return this.databaseService.user.findUnique({ where: name })
+    return this.databaseService.user.findFirst({ where: { name } })
   }
 
   // Get user by email
   async findByEmail(email: string) {
-    return this.databaseService.user.findUnique({ where: email })
+    return this.databaseService.user.findUnique({ where: { email } })
   }
 }
