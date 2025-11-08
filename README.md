@@ -21,14 +21,36 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Introduction
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A simple API Endpoint demonstrating the APIs for the User Registration using NestJS framework
+
+This is the individual assignment (number 3) in the subject Advanced Web Application Development (AWAD)as an exercise for practicing React.
+
+This is a [Nest.js](https://github.com/nestjs/nest) project
 
 ## Project setup
 
 ```bash
 $ npm install
+```
+
+## Local Database setup
+
+The project is using the PostgreSQL database to save the users data when users register.
+
+Since the database connection is not integrated in the source code, you have to create your own local database connection (or using any online database service that supports PostgreSQL and get the database URL).
+
+If you use the local database connection, create a new `.env` file in the root directory  and add the environment that looks like this:
+
+```
+DATABASE_URL="postgresql://postgres:[password]@localhost:5432/postgres"
+```
+
+If you use the online database service, look for the database URL and paste it into the `.env` file in the root directory with the format:
+
+```
+DATABASE_URL="[online-database-service-connection-URL]"
 ```
 
 ## Compile and run the project
