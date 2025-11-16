@@ -25,9 +25,15 @@
 
 A simple API Endpoint demonstrating the APIs for the User Registration using NestJS framework
 
-This is the individual assignment (number 3) in the subject Advanced Web Application Development (AWAD)as an exercise for practicing React.
+This is the individual assignment (number 3) in the subject Advanced Web Application Development (AWAD) as an exercise for practicing Nest.
 
 This is a [Nest.js](https://github.com/nestjs/nest) project
+
+## Online host
+
+This project is hosted using Vercel, here is the link to this project:
+
+https://awad-ia-03-backend.vercel.app/
 
 ## Project setup
 
